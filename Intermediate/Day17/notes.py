@@ -2,7 +2,7 @@
 
 # 1. Creating classes
 
-# must have content, if we want it empty, we can add pass
+# must have content, if we want it empty, we can use pass
 class User:
     # __init__ => constructor of class
     # when constructing, must contain the attributes
