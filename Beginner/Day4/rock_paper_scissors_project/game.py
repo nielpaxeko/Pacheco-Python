@@ -33,7 +33,7 @@ print("Welcome to the rock paper scissors game!")
 game_images = [rock, paper, scissors]
 
 playerChoice = int(
-    input("What do you choose? (Type 0 for Rock, 1 for Paper or 2 for Scissors)")
+    input("What do you choose? (Type 0 for Rock, 1 for Paper or 2 for Scissors) ")
 )
 print("You have chosen:")
 print(game_images[playerChoice])
