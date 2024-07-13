@@ -32,10 +32,7 @@ def check_answer(answer):
         
 
 def give_remaining_states():
-    missing_states = []
-    for state in states:
-        if state not in guessed_states:
-            missing_states.append(state)
+    missing_states = [state for state in states if state not in guessed_states]        
     misses = pandas.DataFrame(missing_states)
     misses.to_csv("states_game_project/missing_states.csv")
     print(f"You missed {len(missing_states)} states...")
