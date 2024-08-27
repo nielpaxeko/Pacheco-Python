@@ -27,6 +27,10 @@
     # 4xx -> You screwed up
     # 5xx -> server screwed up
 '''
+# HOW TO CREATE AN VENV
+# python3 -m venv myvenv
+# source myvenv/bin/activate
+
 
 # This is how to play audio in tkinter
 import pygame
