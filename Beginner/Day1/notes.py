@@ -7,7 +7,7 @@
 # 1. PRINTING TO CONSOLE
 print("Hello, World!")
 print("I'm extremely hungry")
-print('He said,"I wish that i could be like the cool kids!') #double inside single
+print('He said,"I wish that i could be like the cool kids!"') #double inside single
 
 # 2. STRING MANIPULATION
 # backslash n
