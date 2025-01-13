@@ -6,8 +6,8 @@ cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 playerCards = []
 computerCards = []
 
-# Calculates score while accounting for aces
 def calculate_score(cards):
+    """Calculates score while accounting for aces"""
     score = sum(cards)
     if score > 21 and 11 in cards:
         cards.remove(11)
