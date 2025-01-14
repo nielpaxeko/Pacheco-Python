@@ -25,7 +25,7 @@ while not gameOver:
     else:
         winner = "b"
     playerChoice = input("Who do you think has more followes? Type 'A' or 'B': ").lower()
-    # Clear consolo and check if player chose right
+    # Clear console and check if player chose right
     os.system('clear')
     print(logo)
     print(f"{data[firstOption]["name"]} has {data[firstOption]["follower_count"]} millioin followers while {data[secondOption]["name"]} has {data[secondOption]["follower_count"]} million followers.")
