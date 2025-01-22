@@ -29,9 +29,6 @@ tim.forward(300)
 tim.setheading(0)
 
 
-# def change_colour():
-#     tim.color(r.randint(0,255), r.randint(0,255), r.randint(0,255))
-
 def paint_line():
     for i in range(10):
         tim.color()
