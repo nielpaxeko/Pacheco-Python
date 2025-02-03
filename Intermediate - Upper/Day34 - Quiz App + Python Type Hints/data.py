@@ -1,5 +1,6 @@
 import requests
 
+# Get questions from quiz api
 parameters = {
     "amount": 10,
     "type": "boolean",

@@ -4,10 +4,12 @@ from datetime import timezone
 import time
 import smtplib
 
+# My Location
 MY_LAT = 40.712776
 MY_LONG = -74.005974
 MY_POSITION = (MY_LAT, MY_LONG)
 
+# Check ISS position through public API request
 def ISS():
     print(f"The position of the ISS is {iss_position}, your position is {MY_POSITION}")
     print(f"The sun rises at {sunrise}")
