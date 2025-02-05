@@ -24,20 +24,22 @@ AV_PARAMS = {
 
 # Get close values
 response = requests.get(AV_URL, params=AV_PARAMS)
+response.raise_for_status()
 av_data = response.json()
 
 ayer_close = round(float(list(av_data["Time Series (Daily)"].values())[0]["4. close"]))
 anteayer_close = round(float(list(av_data["Time Series (Daily)"].values())[1]["4. close"]))
-print(ayer_close)
-print(anteayer_close)
+print(f"Yesterday's Close: {ayer_close}")
+print(f"Day before yesterday's Close: {anteayer_close}")
 
-# Check for major change
+# Check for major change with major difference being a 5% or more difference in values
 major_change = False
 difference = round(((ayer_close - anteayer_close) * 100) / anteayer_close)
-print(f"Difference: {difference}")
-if (abs(difference) > 5):
+print(f"% Difference: {difference}")
+if (abs(difference) >= 2.5):
     major_change = True
 
+# If major difference, use separate api to fetch news
 if major_change:
     NEWS_URL = "https://newsapi.org/v2/everything"
     NEWS_API_KEY = os.getenv("NEWS_API_KEY")
@@ -67,7 +69,7 @@ if major_change:
                 connection.sendmail(
                     from_addr=MY_EMAIL,
                     to_addrs="edpvpro@hotmail.com",
-                    msg= message
+                    msg=message.encode('utf-8')
                 )
                 print("Message sent successfully")
         except Exception as e:

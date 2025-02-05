@@ -10,8 +10,6 @@ my_email = os.getenv("MY_EMAIL")
 pword = os.getenv("EMAIL_PASSWORD")
 api_key = os.getenv("API_KEY")
 
-
-
 # API CALL
 parameters = {
     # Tokyo coordinates
