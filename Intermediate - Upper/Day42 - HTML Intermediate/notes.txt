@@ -1,0 +1,84 @@
+HTML Boilerplate
+A basic template for an HTML document. Provides the essential structure for a webpage.
+Basic HTML Boilerplate
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Webpage</title>
+    <link rel="stylesheet" href="styles.css"> <!-- External CSS -->
+</head>
+<body>
+    <h1>Welcome to My Website</h1>
+    <p>This is a basic HTML template.</p>
+
+    <script src="script.js"></script> <!-- External JavaScript -->
+</body>
+</html>
+
+Explanation of Key Elements
+<!DOCTYPE html> → Declares the document as HTML5.
+<html lang="en"> → Defines the document language.
+<head> → Contains metadata, links, and scripts.
+<meta charset="UTF-8"> → Supports special characters.
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> → Makes it responsive.
+<title> → Sets the page title.
+<link rel="stylesheet" href="styles.css"> → Links external CSS.
+<body> → Contains visible page content.
+<script src="script.js"></script> → Links external JavaScript.
+
+HTML List Elements
+Ordered List (<ol>) → Numbered list VS Unordered List (<ul>) → Bulleted list
+List Item (<li>) → Individual list item
+Example:
+<ul>
+  <li>Item 1</li>
+  <li>Item 2</li>
+</ul>
+
+<ol>
+  <li>First</li>
+  <li>Second</li>
+</ol>
+
+Nesting & Indentation
+Nesting means placing elements inside other elements. Proper indentation improves readability.
+Example (Nested List):
+<ul>
+  <li>Item 1
+    <ul>
+      <li>Sub-item 1</li>
+      <li>Sub-item 2</li>
+    </ul>
+  </li>
+  <li>Item 2</li>
+</ul>
+
+
+Anchor (<a>) Elements
+Creates hyperlinks to other pages or sections.
+Attributes:
+href → URL or link destination
+target="_blank" → Opens link in a new tab
+Example:
+<a href="https://example.com" target="_blank">Visit Example</a>
+
+Image (<img>) Elements
+Displays an image.
+Attributes:
+src → Image URL/path
+alt → Alternative text for accessibility
+width & height → Image dimensions
+Example:
+<img src="image.jpg" alt="A beautiful scenery" width="300">
+
+Video (<video>) Elements
+Embeds a video on a webpage.
+Attributes:
+controls → Shows play/pause buttons
+autoplay → Starts playing automatically
+loop → Repeats video
+Example:
+<video src="video.mp4" controls width="400"></video>

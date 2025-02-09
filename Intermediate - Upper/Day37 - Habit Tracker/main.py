@@ -30,14 +30,18 @@ pixela_endpoint = "https://pixe.la/v1/users"
 #     "unit": "minutes",
 #     "type": "int",
 #     "color": "shibafu",
-   
 # }
+
+# HTTP Header used for both creating graph and also for posting values to graph
 headers = {
          "X-USER-TOKEN": TOKEN
 }
+
 # graph_endpoint = f"{pixela_endpoint}/{USERNAME}/graphs"
 # response = requests.post(url=graph_endpoint, json=graph_config, headers=headers)
 # print(response.text)
+
+
 
 
 # Post a value to my graph

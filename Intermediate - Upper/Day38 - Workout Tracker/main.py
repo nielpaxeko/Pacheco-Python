@@ -5,6 +5,7 @@ import os
 
 # This program essentially asks the user what excercise they did on that day 
 # It then adds the data as a new row to a google sheets using the sweety and nutrionix APIs 
+
 # Load environment variables from the .env file
 load_dotenv()
 NUTRIONIX_APP_ID = os.getenv("NUTRIONIX_APP_ID")
@@ -13,15 +14,15 @@ USERNAME = os.getenv("USERNAME")
 PASSWORD = os.getenv("PASSWORD")
 SWEETY_ENDPOINT = os.getenv("SWEETY_ENDPOINT")
 
-
-
 # Constants
-WEIGHT = 81
+WEIGHT = 90
 HEIGHT = 176
-AGE = 22
+AGE = 23
 
+# Ask user for their daily excercise
 query = input("Tell me what you excercise you did today: ")
 
+# Create nutrionix data from workout
 nutrionix_endpoint = "https://trackapi.nutritionix.com/v2/natural/exercise"
 nutrionix_params = {
     "query": query,
@@ -34,8 +35,9 @@ nutrionix_headers = {
     "x-app-key": NUTRIONIX_API_KEY,
 }
 
-# Create nutrionix data from workout
+# Nutritionix post request
 response = requests.post(url=nutrionix_endpoint, json=nutrionix_params, headers=nutrionix_headers)
+response.raise_for_status()
 result = response.json()
 
 # Add data to google sheets
@@ -52,7 +54,7 @@ for exercise in result["exercises"]:
             "calories": exercise["nf_calories"]
         }
     }
-
+    # Add exercise info to google sheet
     sheet_response = requests.post(
         SWEETY_ENDPOINT, 
         json=sheet_inputs, 
@@ -61,6 +63,4 @@ for exercise in result["exercises"]:
             PASSWORD,
         )
     )
-
-
     print(sheet_response.text)
