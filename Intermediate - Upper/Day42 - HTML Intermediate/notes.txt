@@ -38,6 +38,7 @@ Example:
   <li>Item 2</li>
 </ul>
 
+For order list can use start attribute to signify starting number of bullet point
 <ol>
   <li>First</li>
   <li>Second</li>
