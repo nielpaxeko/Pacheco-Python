@@ -19,7 +19,8 @@ URL_REDIRECT = "http://example.com"
 
 
 # Function to check if the input year format is correct
-def checkFormat(input_year):
+def check_format(input_year):
+    """Returns True if input date is formatted correctly as '%Y-%m-%d'"""
     try:
         dt.datetime.strptime(input_year, "%Y-%m-%d")
         print(f"{year} is formatted correctly")
@@ -29,7 +30,8 @@ def checkFormat(input_year):
         return False
 
 
-def scrapeBillboard(year):
+def scrape_billboard(year):
+    """Uses web scraping to create a list of songs from the input date.'"""
     URL = f"https://www.billboard.com/charts/hot-100/{year}"
     header = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:131.0) Gecko/20100101 Firefox/131.0"
@@ -49,7 +51,8 @@ def scrapeBillboard(year):
     return song_list
 
 # Create spotify playlist using spotipy documentation 
-def createPlaylist(song_list, year):
+def create_playlist(song_list, year):
+    """Creates spotify playlist from list of songs."""
     sp = spotipy.Spotify(
         auth_manager=SpotifyOAuth(
             client_id=CLIENT_ID,
@@ -86,6 +89,6 @@ def createPlaylist(song_list, year):
 # Must type the following URL:
 # https://example.com/?code=AQCC78Vrx0XXen3IlyT_8QYMHg7sWJ-Kz8-iqPa2sw0W3bePpNOw5GZpapYEBmuVXGLdt9k9RdeWtoY-xXmyGe9yl2g27_Jy_0FcgSYegszykwQ1OTNQFgkl2TmegCRMjdw4-Q1oRWqQ64DcR9SGdS5UX0BltVvHUh-CHzTa-zC56W94So_pELMcqIpjEg
 year = input("What year would you like to travel to in YYYY-MM-DD format? ")
-if checkFormat(year):
-    songs = scrapeBillboard(year)
-    createPlaylist(songs, year)
+if check_format(year):
+    songs = scrape_billboard(year)
+    create_playlist(songs, year)
