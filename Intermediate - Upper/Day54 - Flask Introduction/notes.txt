@@ -15,7 +15,7 @@ For the Flask to work, need to do lots of things:
 5. In vscode, there is a prompt to install pylint, do it if you want
 6. In Python terminal: python -m pip install --upgrade pip
 7. In Python terminal: python -m pip install flask  
-8. In Python terminal: set FLASK_APP=appName.py (By Default, its called app.py)
+8. In Python terminal: export FLASK_APP=appName.py (By Default, its called app.py)
 9. In Python terminal: python -m flask run
 ------ Link to Manual: https://code.visualstudio.com/docs/python/tutorial-flask
 
@@ -25,3 +25,7 @@ Command Line Interface:
    a. Command Line Interface
    b. Graphical User Interface
 - Command Line Interface: greater control
+
+Run code through terminal instead of flask run, put at end of code
+if __name__ == "__main__":
+    app.run()
