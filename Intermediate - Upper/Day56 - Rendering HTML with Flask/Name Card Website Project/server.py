@@ -1,0 +1,11 @@
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route("/")
+def hom():
+    return render_template("index.html")
+
+# Run the app in debug mode for auto-reload
+if __name__ == "__main__":
+    app.run(debug=True)
