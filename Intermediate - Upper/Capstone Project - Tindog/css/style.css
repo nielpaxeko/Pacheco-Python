@@ -1,0 +1,206 @@
+.gradient-background {
+  background: linear-gradient(300deg, #00bfff, #ff4c68, #ef8172);
+  background-size: 180% 180%;
+  animation: gradient-animation 18s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Title section */
+#title {
+  padding-left: 15%;
+  padding-right: 15%;
+  overflow: hidden;
+}
+
+.navbar {
+  margin-bottom: 30px;
+}
+
+.navbar-expand-lg .navbar-collapse {
+  justify-content: end;
+}
+
+.navbar-brand,
+.nav-link {
+  color: white !important;
+}
+
+.navbar-brand {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.nav-link {
+  font-size: 1.2rem;
+  font-family: "Montserrat-Light", sans-serif;
+}
+
+#title-headline {
+  font-family: "Montserrat-Bold", sans-serif;
+  font-size: 3.5rem;
+  font-weight: 900;
+  line-height: 1.5;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.title-row {
+  justify-content: center !important;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  padding: 0;
+}
+
+.iphone {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transform: rotate(25deg);
+  height: 80%;
+}
+
+/* Features section */
+#features {
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-box {
+  text-align: center;
+  font-size: large;
+}
+
+i {
+  font-size: 60px;
+  color: #ff4c68;
+}
+
+/* Testimonials */
+#testimonial {
+  height: 400px;
+  background-color: #ff4c68;
+}
+
+.carousel-inner {
+  height: 400px;
+  display: flex;
+  align-items: center;
+}
+
+
+.testimonial-box {
+  text-align: center;
+  ;
+}
+
+.testimonial-text {
+  margin: auto;
+  width: 80%;
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.testimonial-img {
+  clip-path: circle();
+  height: 60px;
+  margin-right: 10px;
+}
+
+/* Pricing */
+#pricing {
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-container {
+  text-align: center;
+}
+
+.card-header {
+  background-color: #ff4c68;
+  color: white;
+}
+
+/* footer */
+#footer {
+  height: 400px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  background-color: #ff4c68;
+}
+
+#copyright {
+  color: white;
+}
+
+@media (max-width: 778px) {
+  .iphone {
+    transform: rotate(0deg);
+    margin-top: 20px;
+  }
+
+  #title-headline {
+    font-size: 2.5rem;
+    text-align: center;
+    align-items: center;
+  }
+
+  .title-container {
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* features */
+  #features {
+    height: 700px;
+  }
+
+  .feature-box {
+    margin-bottom: 20px;
+  }
+
+  /* testimonials */
+  .testimonial-text {
+    font-size: 1.25rem;
+  }
+
+  .testimonial-img {
+    height: 40px;
+  }
+
+  /* pricing */
+  #pricing {
+    height: 1000px;
+  }
+
+  .card {
+    margin-bottom: 20px;
+  }
+}
