@@ -11,15 +11,25 @@ with open("blog_data.json", "r") as file:
 
 app = Flask(__name__)
 
-@app.route("/")
-def home():
+@app.route('/')
+def get_all_posts():
     return render_template("index.html", blog_data=post_objects)
 
-@app.route("/post/<int:id>")
-def read_post(id):
+
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
+
+@app.route("/contact")
+def contact():
+    return render_template("contact.html")
+
+@app.route('/post/<int:post_id>')
+def post(post_id):
     requested_post = None
     for blog_post in post_objects:
-        if blog_post.id == id:
+        if blog_post.id == post_id:
             requested_post = blog_post
     return render_template("post.html", post = requested_post )
 
