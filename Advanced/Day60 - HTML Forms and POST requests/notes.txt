@@ -1,0 +1,5 @@
+NOTE: The action attribute of the form can be set to "/login" e.g.
+<form action="/login" method="post"> or it can be dynamically generated with url_for e.g.
+<form action="{‌{ url_for('receive_data') }}" method="post">
+Depending on where your server is hosted, the "/login" path may change. 
+So it's usually a better idea to use url_for to dynamically generate the url for a particular function in your Flask server.
