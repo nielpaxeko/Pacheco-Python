@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Login</h1>
+      <!-- In order to make sure that we are giving all users field validation, 
+	   we have to switch off the browser validation, 
+	   and we do that with an attribute on the form element called novalidate -->
+      <!-- Note that the entire code below can be replaced simplified as shown in login-simplified.html -->
+      {% from 'bootstrap5/form.html' import render_form %}
+      <form method="POST" action="{{ url_for('login') }}">
+        <!-- Important for security-->
+        {{ form.csrf_token }}
+        <!-- Display label and input + show validation errors-->
+        <p>
+          {{ form.email.label }} <br />
+          {{ form.email(size=30) }} {% for err in form.email.errors %}
+          <span style="color: red">{{ err }}</span>
+          {% endfor %}
+        </p>
+        <p>
+          {{ form.password.label }} <br />
+          {{ form.password(size=30) }} {% for err in form.password.errors %}
+          <span style="color: red">{{ err }}</span>
+          {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+      </form>
+    </div>
+  </body>
+</html>
